@@ -1,16 +1,15 @@
 package Tests;
 
-import Pages.LoginPage;
-import Pages.RegistrstionPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-protected LoginPage loginPage;
-
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class Base {
 
-    protected WebDriver driver;
+  WebDriver driver;
 
     // All page objects - initialized in setUp
 
@@ -23,13 +22,12 @@ public class Base {
         driver.get("https://your-inventory-app.com");
 
         // Initialize ALL page objects using PageFactory
-        loginPage = PageFactory.initElements(driver, LoginPage.LoginPage.class);
-        registrationPage = PageFactory.initElements(driver, RegistrstionPage.RegistrationPage.class);
-        dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
-        wizardStep1Page = PageFactory.initElements(driver, WizardStep1Page.class);
-        wizardStep2Page = PageFactory.initElements(driver, WizardStep2Page.class);
-        cartReviewPage = PageFactory.initElements(driver, CartReviewPage.class);
-        orderHistoryPage = PageFactory.initElements(driver, OrderHistoryPage.class);
+        LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+        RegistrationPage registrationPage = PageFactory.initElements(driver, RegistrationPage.class);
+        DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
+        WizardStep1Page wizardStep1Page = PageFactory.initElements(driver, WizardStep1Page.class);
+
+
     }
 
     @AfterMethod
@@ -38,7 +36,6 @@ public class Base {
             driver.quit();
         }
     }
-
 
 
 }

@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class RegistrstionPage {
+public class RegistrationPage {
 
-    public class RegistrationPage {
+
         public WebDriver driver;
 
         @FindBy(id = "regEmail")
@@ -27,6 +27,9 @@ public class RegistrstionPage {
         @FindBy(id = "backToLogin")
         private WebElement backToLoginLink;
 
+        public RegistrationPage(WebDriver driver) {
+            this.driver = driver;
+        }
         public void enterEmail(String email) {
             emailField.clear();
             emailField.sendKeys(email);
@@ -73,4 +76,4 @@ public class RegistrstionPage {
 
 
 
-}
+

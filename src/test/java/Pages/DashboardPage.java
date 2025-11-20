@@ -21,7 +21,10 @@ public class DashboardPage {
     @FindBy(id = "viewHistoryButton")
     private WebElement viewHistoryButton;
 
-    public boolean areTabsVisible() {
+    public DashboardPage(WebDriver  driver) {
+        this.driver = driver;
+    }
+    public boolean areTabsVisible(){
         return dashboardTabs.isDisplayed();
     }
 
@@ -48,4 +51,4 @@ public class DashboardPage {
 
 
 
-}
+
